@@ -12,7 +12,8 @@ $ ./AnytoneCSVTool.py
 AnytoneCSVtool: A tool for downloading the current DMR database
 and converting for upload to Anytone DMR HTs by vk3dan
 
-user.csv found
+fetching DMR database file (~9MB)
+
 reformatting DMR database to suit Anytone...
 159124 DMR IDs output to Anytone.csv
 
