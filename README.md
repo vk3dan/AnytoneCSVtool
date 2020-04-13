@@ -1,6 +1,8 @@
 # AnytoneCSVtool
 A tool for fetching and converting the DMR ID database for upload to an Anytone HT (and possibly B-Tech 6x2)
 
+If the DMR database file exists and is under 7 days old, it will be used, otherwise it will be downloaded again.
+
 This tool is written in python and requires pandas.
 
 Windows users can click on 'Releases' above and there is an exe file provided there.
