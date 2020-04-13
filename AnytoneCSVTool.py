@@ -8,6 +8,7 @@ import pandas as pd
 dbfile = "user.csv"
 outputfile = "Anytone.csv"
 dburl = "https://www.radioid.net/static/user.csv"
+current_time = time.time()
 
 print ("\nAnytoneCSVtool: A tool for downloading the current DMR database\nand converting for upload to Anytone DMR HTs by vk3dan\n")
 
