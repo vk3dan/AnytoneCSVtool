@@ -21,7 +21,7 @@ if os.path.isfile(dbfile):
         response = urllib2.urlopen(dburl)
         with open(dbfile, 'w') as f: f.write(response.read ())
 else:
-    print("fetching DMR database file (~9MB")
+    print("fetching DMR database file (~9MB)")
     response = urllib2.urlopen(dburl)
     with open(dbfile, 'w') as f: f.write (response.read ())
 
