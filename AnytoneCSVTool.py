@@ -2,19 +2,26 @@
 
 import urllib2
 import os.path
+import time
 import pandas as pd
 
 dbfile = "user.csv"
 outputfile = "Anytone.csv"
+dburl = "https://www.radioid.net/static/user.csv"
 
 print ("\nAnytoneCSVtool: A tool for downloading the current DMR database\nand converting for upload to Anytone DMR HTs by vk3dan\n")
 
 # get the current database csv from radioid.net
 if os.path.isfile(dbfile):
-    print("user.csv found, moving on")
+    print("user.csv found")
+    creation_time = os.path.getctime(dbfile)
+    if (current_time - creation_time) // (24 * 3600) >= 7:
+        print("file over 7 days old, fetching current version (~9MB)")
+        os.unlink(dbfile)
+        response = urllib2.urlopen(dburl)
+        with open(dbfile, 'w') as f: f.write(response.read ())
 else:
-    print("fetching DMR database file")
-    dburl = "https://www.radioid.net/static/user.csv"
+    print("fetching DMR database file (~9MB")
     response = urllib2.urlopen(dburl)
     with open(dbfile, 'w') as f: f.write (response.read ())
 
